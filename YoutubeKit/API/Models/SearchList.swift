@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SearchList: Codable {
+public struct SearchList: NSObject, Codable {
     public let etag: String
     public let items: [SearchResult]
     public let kind: String
@@ -17,14 +17,14 @@ public struct SearchList: Codable {
     public let regionCode: String
 }
 
-public struct SearchResult: Codable {
+public class SearchResult: NSObject, Codable {
     public let etag: String
     public let id: SearchResultID
     public let kind: String
     public let snippet: Snippet.SearchList
 }
 
-public struct SearchResultID: Codable {
+public struct SearchResultID: NSObject, Codable {
     public let channelID: String?
     public let kind: String
     public let videoID: String?
